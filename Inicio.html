@@ -1,30 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="/Boot/bootstrap.min.css">
-    <link rel="stylesheet" href="CSSInicio.css">
+    <title>Nombre de Tu Juego</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-image: url(/images/Zelda.jpeg);
+            background-repeat: repeat-y;
+            background-size: cover;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .play-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #3498db;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        .play-button:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <h1>MN Memorama</h1>
-            <br>
-            <br>
-            <h4>Aprende sobre la marcha, conoce tus limites</h4>
 
-            <br>
-            <br>
-            <a href="index.html" class="button">Inicio</a>      
-        </div>
-    </div>
+    <header>
+        <h1>Magic Memory</h1>
+    </header>
 
+    <main>
+        <p>Bienvenido al desafio . Sumérgete en una emocionante experiencia de juego.</p>
+        <a href="index.html" class="play-button">Jugar ahora</a>
+    </main>
 
-    <script src="/Boot/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
