@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="60">
+  <title>Memorama MN</title>
+  <link rel="stylesheet" href="style1.css"></link>
+  <script src="app.js" charset="utf-8"></script>
+</head>
+<body onload="init()">
+
+  <script>
+
+    function play(){
+      var audio=new Audio('music.mp3');
+      audio.play();
+      
+    };
+  </script>
+   
+  <button onclick='play();'>Musica</button>
+
+  <h3>Puntuacion:<span id="result"></span></h3>
+
+  <div class="grid">
+  </div>
+
+<div class="Timer">
+  <input id="time" name="time" value="60" />
+</div>
+ 
+
+  <a href="./Index1.html" class="btn-flotante">Sig nivel</a>
+  
+
+  <script>
+
+    var cronos;
+    var tiempo;
+
+     function init() {
+       cronos = setInterval(function() { timer() }, 1000);
+     }
+
+     function timer() {
+       tiempo = parseInt(document.getElementById('time').value);
+       document.getElementById('time').value = eval(tiempo-1);
+     }
+  </script> 
+  <div id="popup">
+    <p>Pregunta: ¿En que año nacio Isaac Newton? </p>
+    <input type="text" id="respuestaInput">
+    <button onclick="verificarRespuesta()">Responder</button>
+</div>
+
+<div id="overlay"></div>
+
+<script>
+    setInterval(function() {
+        mostrarPopUp();
+    }, 30000); // Mostrar pop-up cada 30 segundos
+
+    function mostrarPopUp() {
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("popup").style.display = "block";
+    }
+
+    function verificarRespuesta() {
+        var respuesta = document.getElementById("respuestaInput").value.toLowerCase();
+        if (respuesta === "1642") {
+            alert("Respuesta correcta");
+            cerrarPopUp();
+            
+        } else {
+            alert("Respuesta incorrecta. La página se reiniciará.");
+            location.reload(); // Reiniciar la página
+        }
+    }
+
+    function cerrarPopUp() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("respuestaInput").value = ""; // Limpiar el campo de respuesta
+    }
+</script>
+</body>
+</html>
